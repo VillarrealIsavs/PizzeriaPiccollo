@@ -4,9 +4,8 @@ ON c.id_cliente = p.id_cliente
 WHERE p.fecha_pedido BETWEEN '2026-01-01' AND '2026-01-31';
 
 
-SELECT p.nombre AS pizza, COUNT(dp.id_detalle) AS veces_vendida
-FROM pizzas p INNER JOIN detalle_pedido dp
-ON p.id_pizza = dp.id_pizza
+SELECT p.nombre, COUNT(dp.id_detalle) AS veces_vendida
+FROM pizzas p JOIN detalle_pedido dp ON p.id_pizza = dp.id_pizza
 GROUP BY p.id_pizza, p.nombre ORDER BY veces_vendida DESC;
 
 
