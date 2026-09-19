@@ -25,7 +25,7 @@ CREATE TABLE repartidores (
     estado ENUM('disponible', 'no disponible') DEFAULT 'disponible'
 );
 
-INSERT INTO repartidores (nombre, sede, estado)
+INSERT INTO repartidores (nombre, zona, estado)
 VALUES
 ('Alejandro Solano', 'Norte', 'disponible'),
 ('David Dominguez', 'Sur', 'disponible'),
@@ -127,7 +127,7 @@ CREATE TABLE domicilios (
     id_domicilio INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT NOT NULL UNIQUE,
     id_repartidor INT NOT NULL,
-    sede VARCHAR(80) NOT NULL,
+    zona VARCHAR(80) NOT NULL,
     hora_salida DATETIME,
     hora_entrega DATETIME,
     distancia_km DECIMAL(6,2) NOT NULL DEFAULT 0,

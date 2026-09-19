@@ -16,12 +16,12 @@ CREATE VIEW vista_rendimiento_repartidores AS
 SELECT
     r.id_repartidor,
     r.nombre,
-    r.sede,
+    r.zona,
     COUNT(d.id_domicilio) AS domicilios_realizados
 FROM repartidores r
 LEFT JOIN domicilios d
     ON r.id_repartidor = d.id_repartidor
-GROUP BY r.id_repartidor, r.nombre, r.sede;
+GROUP BY r.id_repartidor, r.nombre, r.zona;
 
 
 CREATE VIEW vista_stock_bajo AS
